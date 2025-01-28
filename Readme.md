@@ -1,205 +1,157 @@
-# HealthSync AI Mobile App
+# 📱 HealthSync.ai - Mobile Client App
 
-HealthSync AI is a comprehensive health monitoring and wellness application that leverages artificial intelligence to provide personalized health insights, tracking, and recommendations.
+[![React Native](https://img.shields.io/badge/React_Native-v0.76+-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-v52.x-000000?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
+[![NativeWind](https://img.shields.io/badge/NativeWind-Tailwind-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://www.nativewind.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-## Features
+> **HealthSync.ai** was built from the ground up for **`𝗛𝗲𝗮𝗹𝘁𝗵-𝗔-𝘁𝗵𝗼𝗻 𝟮𝟬𝟮𝟱`** to revolutionize clinical workflows. This repository hosts the Expo-based React Native Mobile Client supporting both iOS and Android.
 
-- **Health Monitoring**: Track vital signs, activity levels, and sleep patterns
-- **AI-Powered Analysis**: Get personalized insights based on your health data
-- **Medication Management**: Set reminders and track medication intake
-- **Appointment Scheduling**: Manage healthcare appointments
-- **Secure Communication**: Connect with healthcare providers securely
-- **Wellness Goals**: Set and track personalized wellness goals
+---
 
-## Prerequisites
+## 👁️ Showcase & Presentation
 
-- Node.js (v14.0.0 or later)
-- npm (v6.0.0 or later) or yarn (v1.22.0 or later)
-- React Native CLI
-- Android Studio (for Android development)
-- Xcode (for iOS development, macOS only)
-- CocoaPods (for iOS dependencies, macOS only)
+To see HealthSync.ai in action, check out the clinical dashboards and review our team's vision presentation.
 
-## Setup Instructions
+<div align="center">
+  <h3>📊 Project Presentation</h3>
+  <p>Discover our architectural vision, business model, and clinical impact studies.</p>
+  <a href="assets/assets/presentation.pdf" target="_blank">
+    <img src="https://img.shields.io/badge/Download_Presentation-PDF-red?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white" alt="Download Presentation PDF" />
+  </a>
+</div>
 
-### 1. Clone the Repository
+<br/>
 
-```bash
-git clone https://github.com/NeelDevenShah/Healthsync-ai-app-backend
-cd Healthsync-ai-mobile-app-frontend
+<div align="center">
+  <h3>🩺 Patient Portal</h3>
+  <p>AI-Powered triage, automated symptom assessments, and personalized diagnostic recommendations.</p>
+  <img src="assets/assets/patient-portal.png" width="800" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="Patient Portal Screen" />
+</div>
+
+<br/>
+
+<div align="center">
+  <h3>👨‍⚕️ Doctor Portal</h3>
+  <p>Unified clinician queue, AI diagnostic approval/modification interfaces, and smart scheduler.</p>
+  <img src="assets/assets/doctor-portal.png" width="800" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="Doctor Portal Screen" />
+</div>
+
+---
+
+## 🧠 The Problem & Our Solution
+
+### 🧠 The Problem
+Healthcare professionals are drowning in administrative overhead and fractured workflows. The current diagnostic journey involves:
+- Multiple, disjointed patient visits just to request, analyze, and review basic tests.
+- Clinical bottlenecks causing significant treatment delays.
+- Doctors spending up to 40% of their day on administrative data entry rather than care.
+
+### ✅ Our Solution
+**HealthSync.ai** orchestrates a seamless, AI-integrated diagnostic loop:
+* **Patients** upload reports/symptoms, and receive immediate AI-guided pre-analysis and test recommendations, saving **50% of workflow time** prior to their appointment.
+* **Doctors** receive automatically aggregated diagnostic summaries, allowing them to review, tweak, and approve AI recommendations, boosting consultation speed by **40%**.
+
+---
+
+## 🛠️ What We Built (Mobile Features)
+
+This cross-platform mobile client provides a custom user experience for both **Patients** and **Doctors**:
+
+### 1. Patient Portal
+- 📈 **Interactive Vitals Dashboard**: Monitor and visualize heart rate, blood glucose, and blood pressure with custom widgets and line graphs powered by `react-native-chart-kit`.
+- 💬 **Gemini AI Diagnosis Chat**: Real-time AI consultation chat interface powered by `react-native-gifted-chat` for instant clinical symptom screening.
+- 📄 **Report & Prescription Upload**: Take photos or pick PDFs directly from your device using `expo-image-picker` and `expo-document-picker`.
+- ⏰ **Medication Reminders**: Manage daily pill schedules and receive local push notifications via `expo-notifications`.
+
+### 2. Doctor Portal
+- 📋 **Patient Queue & Detail View**: View complete medical summaries, active vitals, and report histories for all assigned patients.
+- 🔍 **AI Recommendation Review**: View Gemini's automated test recommendations, and easily approve, edit, or append comments before signing off.
+- 📅 **Schedule & Appointment Manager**: Keep track of scheduled calls and clinic check-ins with `react-native-calendars`.
+
+---
+
+## 🧱 Technical Architecture
+
+### Key Libraries & Stack
+* **Framework:** React Native (Expo SDK 52)
+* **Styling:** TailwindCSS via NativeWind
+* **Navigation:** React Navigation (Tabs, Drawers, Stacks)
+* **Charts:** React Native Chart Kit
+* **Forms & Logic:** Axios (Backend integration), AsyncStorage (Session persistency)
+
+### Directory Structure
+```
+Healthsync-ai-mobile-app-frontend/
+├── assets/                  # App images (icon, logo, splash)
+│   └── assets/              # Hackathon Showcase assets (Screenshots, PDFs)
+├── src/
+│   ├── api/                 # Endpoint client services (Axios configs)
+│   ├── components/          # Reusable components (Vitals card, appointment card, buttons)
+│   ├── context/             # Global AuthContext & theme state management
+│   ├── navigation/          # Navigation flows (Auth stack, Doctor tabs, Patient tabs/drawer)
+│   └── screens/             # Screen modules
+│       ├── auth/            # Onboarding, Login, Register, Forgot Password
+│       ├── doctor/          # Doctor Homescreen, Appointments, Diagnosis Detail, Patient Details
+│       └── patient/         # Health Dashboard, Vitals Tracker, AI Chat, Upload Report
 ```
 
-### 2. Install Dependencies
+---
 
-```bash
-# Using npm
-npm install
+## 🚀 Getting Started
 
-# Using yarn
-yarn install
-```
+### 📋 Prerequisites
+- **Node.js** (v18.0.0 or higher)
+- **Expo Go** app installed on your physical mobile device, OR Android Studio Emulator / iOS Simulator.
 
-### 3. iOS Setup (macOS only)
+### 🔧 Installation & Run
 
-```bash
-cd ios
-pod install
-cd ..
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/NeelDevenShah/Healthsync-ai-mobile-app-frontend.git
+   cd Healthsync-ai-mobile-app-frontend
+   ```
 
-### 4. Environment Configuration
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-Create a `.env` file in the root directory with the following variables:
+3. **Configure Environment Variables:**
+   Create a `.env` file in the root directory:
+   ```env
+   API_URL=http://localhost:5000/api
+   ```
+   *(Note: Replace `localhost` with your machine's local IP address if running on a physical phone via Expo Go).*
 
-```
-API_URL=your_api_url
-SOCKET_URL=your_socket_url
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-```
+4. **Start the Expo server:**
+   ```bash
+   npx expo start
+   ```
+
+5. **Run the App:**
+   - Scan the QR code with **Expo Go** (Android) or your camera app (iOS) to test on a physical phone.
+   - Press `a` for Android Emulator.
+   - Press `i` for iOS Simulator.
 
 ---
 
-# HealthSync.ai
+## 🔗 Related Repositories
 
-**HealthSync.ai** is a next-generation healthcare platform designed to drastically reduce administrative workload and streamline diagnostic workflows for both doctors and patients. Developed by **Team ML Mavericks**, this AI-driven application empowers medical professionals and patients by automating and optimizing the diagnostic and reporting process.
+This is the **Mobile Frontend Client** repository for HealthSync.ai.
 
----
-
-## 🧠 Problem Statement
-
-Healthcare professionals are overwhelmed by administrative burdens and inefficient workflows. The current diagnostic journey involves:
-
-- Multiple patient visits (consultation, test ordering, and result reviews).
-- Delays in treatment decisions.
-- Excessive time spent on non-critical tasks.
+* 🖥️ **Backend API Repository**: Visit the [HealthSync AI App Backend](https://github.com/NeelDevenShah/Healthsync-ai-app-backend) to set up the Node.js/Express service.
 
 ---
 
-## ✅ Our Solution
+## 👥 Team ML Mavericks
 
-**HealthSync.ai** reimagines the diagnostic workflow using AI-powered automation.
-
-### Patient Benefits
-
-- ⏱️ **50% Time Saved**: Streamlined pre-appointment diagnostic workflows.
-- 🧠 **Intelligent Test Recommendations**: AI suggests appropriate diagnostic tests.
-- 📋 **Comprehensive Pre-Analysis**: Patients receive initial results before seeing the doctor.
-
-### Doctor Advantages
-
-- ⚡ **40% Efficiency Increase**: Enhanced consultation speed.
-- 📄 **Automated Summaries**: AI-generated summaries of patient data and diagnostics.
-- 🏥 **Focus on Critical Care**: Less time on paperwork, more on patients.
-
----
-
-## 🚀 Key Outcomes
-
-- Faster, smarter healthcare delivery.
-- Maximized professional productivity.
-- Enhanced patient satisfaction and treatment outcomes.
-
----
-
-## 🧩 App Modules
-
-The app is divided into two main portals:
-
-### 1. **Patient Portal**
-
-- Upload reports and input symptoms.
-- Receive AI-generated diagnosis.
-- Review suggested tests and book appointments.
-
-**Screenshots to add:**
-
-- Patient dashboard
-- Report upload screen
-- AI diagnosis result
-
-### 2. **Doctor Portal**
-
-- Review patient history and test results.
-- Approve/modify AI diagnosis.
-- Schedule appointments and recommend follow-ups.
-
-**Screenshots to add:**
-
-- Doctor login dashboard
-- Patient diagnosis summary
-- Report recommendation approval
-
----
-
-## 🛠️ Tech Stack
-
-| Layer          | Technology   |
-| -------------- | ------------ |
-| Frontend       | React Native |
-| Backend        | Node.js      |
-| File Uploads   | Multer       |
-| AI Integration | Gemini API   |
-
----
-
-## 🔄 Diagnostic Workflow
-
-1. **Patient Uploads Medical History**
-   - Symptoms, prior reports, etc.
-2. **AI Suggests Diagnostic Reports**
-   - Smart recommendations powered by Gemini API.
-3. **Doctor Reviews and Approves**
-   - Doctors can accept or adjust AI suggestions.
-4. **Schedule Appointments**
-   - Based on test results and urgency.
-
----
-
-## 🔭 Future Roadmap
-
-### 🔬 Advanced Patient Monitoring
-
-- Chronic disease tracking (Diabetes, Hypertension, IHD)
-
-### 🛎️ Smart Notification System
-
-- Medicine reminders, health check alerts
-
-### 🔗 IoT Device Integration
-
-- Real-time tracking of:
-  - Heart rate
-  - Blood oxygen saturation
-  - Movement patterns
-
----
-
-## 🧑‍💻 Team
-
-**Team ML Mavericks**  
-Passionate about solving real-world healthcare problems using AI and software innovation.
-
-1. Neel Shah (neeldevenshah.ai@gmail.com)
-1. Pankil Soni (pmsoni2016@gmail.com)
-1. Sneh Shah (snehs5483@gmail.com)
-
----
-
-## Acknowledgments
-
-- Administrative Burden Survey – Office of Regulatory Affairs and Service Effectiveness, Nova Scotia, 2020
-- Gemini API by Google (used for AI diagnosis)
-
----
-
-## 📂 Repository Information
-
-This is the **backend repository** for HealthSync.ai.
-
-For the frontend repository, visit: [https://github.com/NeelDevenShah/Healthsync-ai-mobile-app-frontend](https://github.com/NeelDevenShah/Healthsync-ai-mobile-app-frontend)
+Developed with passion at **Health-A-Thon 2025**:
+* **Neel Shah** - [neeldevenshah.ai@gmail.com](mailto:neeldevenshah.ai@gmail.com)
+* **Pankil Soni** - [pmsoni2016@gmail.com](mailto:pmsoni2016@gmail.com)
+* **Sneh Shah** - [snehs5483@gmail.com](mailto:snehs5483@gmail.com)
 
 ---
 
 ## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
